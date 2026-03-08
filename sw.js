@@ -1,8 +1,10 @@
-const CACHE = "calorie-tracker-v1";
+const CACHE = "calorie-tracker-v2";
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(["./", "./index.html", "./style.css", "./app.js", "./manifest.json"]))
+    caches.open(CACHE).then((cache) =>
+      cache.addAll(["./", "./index.html", "./style.css", "./app.js", "./food-database.js", "./manifest.json"])
+    )
   );
   self.skipWaiting();
 });

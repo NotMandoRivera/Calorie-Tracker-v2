@@ -208,7 +208,7 @@ let selectedFoodFromSearch = null;
 
 function filterFoods(query) {
   const q = (query || "").trim().toLowerCase();
-  const maxResults = 25;
+  const maxResults = 200;
   if (!q) return FOOD_DATABASE.slice(0, maxResults);
   return FOOD_DATABASE.filter((f) => f.name.toLowerCase().includes(q)).slice(0, maxResults);
 }
