@@ -332,7 +332,6 @@ document.getElementById("add-form").addEventListener("submit", (e) => {
   calInput.value = "";
   proteinInput.value = "";
   clearSelectedFood();
-  applyLastEntry();
   renderEntries();
 });
 
