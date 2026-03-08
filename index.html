@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#01434b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Calorie Tracker</h1>
+      <p class="subtitle">Track meals and protein</p>
+    </header>
+
+    <section class="date-section card">
+      <label for="log-date">Date</label>
+      <input type="date" id="log-date">
+      <p class="day-of-week" id="day-of-week" aria-hidden="true"></p>
+    </section>
+
+    <section class="goal-section card">
+      <label for="daily-goal">Daily calorie goal</label>
+      <input type="number" id="daily-goal" placeholder="e.g. 2000" min="1" step="1">
+    </section>
+
+    <section class="summary card">
+      <div class="summary-grid">
+        <div class="summary-row">
+          <span>Calories</span>
+          <strong id="consumed">0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Remaining</span>
+          <strong id="remaining">—</strong>
+        </div>
+        <div class="summary-row">
+          <span>Protein</span>
+          <strong id="protein-total">0 g</strong>
+        </div>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="add-section card">
+      <h2>Add food</h2>
+      <form id="add-form">
+        <label for="meal-type" class="sr-only">Meal</label>
+        <div class="meal-type-tabs" role="group" aria-label="Meal type">
+          <input type="radio" name="meal-type" id="meal-breakfast" value="breakfast" checked>
+          <label for="meal-breakfast">Breakfast</label>
+          <input type="radio" name="meal-type" id="meal-lunch" value="lunch">
+          <label for="meal-lunch">Lunch</label>
+          <input type="radio" name="meal-type" id="meal-dinner" value="dinner">
+          <label for="meal-dinner">Dinner</label>
+          <input type="radio" name="meal-type" id="meal-snacks" value="snacks">
+          <label for="meal-snacks">Snacks</label>
+        </div>
+        <input type="text" id="food-name" placeholder="Food or meal name" required autocomplete="off">
+        <div class="input-row">
+          <input type="number" id="food-calories" placeholder="Calories" min="0" step="1" required>
+          <input type="number" id="food-protein" placeholder="Protein (g)" min="0" step="1">
+        </div>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="entries-section card">
+      <h2 id="entries-heading">Entries</h2>
+      <div id="entries-by-meal"></div>
+      <p class="empty-state" id="empty-state">No entries yet. Add your first meal above.</p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

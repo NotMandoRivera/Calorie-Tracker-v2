@@ -1,0 +1,10 @@
+{
+  "name": "calorie-tracker",
+  "private": true,
+  "scripts": {
+    "icons": "node create-icons.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
