@@ -69,6 +69,18 @@
           <label for="meal-snacks">Snacks</label>
         </div>
         <input type="text" id="food-name" placeholder="Food or meal name" required autocomplete="off">
+        <div class="food-search-section">
+          <p class="food-search-label">Or pick from common foods</p>
+          <input type="text" id="food-search" placeholder="Search foods…" autocomplete="off" aria-label="Search common foods">
+          <div id="food-search-results" class="food-search-results" role="listbox" aria-label="Search results" hidden></div>
+          <div class="food-amount-row" id="food-amount-row" hidden>
+            <input type="number" id="food-amount" placeholder="Amount" min="0" step="1" aria-label="Amount in grams or milliliters">
+            <select id="food-unit" aria-label="Unit">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+            </select>
+          </div>
+        </div>
         <div class="input-row">
           <input type="number" id="food-calories" placeholder="Calories" min="0" step="1" required>
           <input type="number" id="food-protein" placeholder="Protein (g)" min="0" step="1">
